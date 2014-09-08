@@ -11,7 +11,7 @@ from bottle import Bottle, request, response, abort, template
 
 from werobot.config import Config, ConfigAttribute
 from werobot.parser import parse_user_msg
-from werobot.reply import create_reply,ArticlesReply,WeChatReply
+from werobot.reply import create_reply,ArticlesReply,WeChatReply,Article
 from werobot.utils import to_binary, to_text
 
 __all__ = ['BaseRoBot', 'WeRoBot']
