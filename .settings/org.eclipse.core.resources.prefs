@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//example/hello_world.py=utf-8
+encoding//werobot/client.py=utf-8
+encoding//werobot/config.py=utf-8
+encoding//werobot/logger.py=utf-8
+encoding//werobot/messages.py=utf-8
+encoding//werobot/reply.py=utf-8
+encoding//werobot/robot.py=utf-8
+encoding//werobot/session/filestorage.py=utf-8
+encoding//werobot/session/saekvstorage.py=utf-8
+encoding//werobot/tests/test_reply.py=utf-8
+encoding//werobot/utils.py=utf8
+encoding/setup.py=utf-8
