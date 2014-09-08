@@ -328,7 +328,7 @@ if __name__ =="__main__":
                       MsgType="news",ArticleCount=1,Title=u"Plone技术论坛",\
                       Decsription="最大的中文Plone技术社区",Url="http://plone.315ok.org/"
                       )
-        return message.content
+        return ArticlesReply
 
     @robot.voice
     def echotext(message):
