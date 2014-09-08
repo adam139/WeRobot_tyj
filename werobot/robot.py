@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#!/home/plone/workspace/WeRobot/bin/python
 import six
 import werobot
 import os
