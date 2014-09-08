@@ -276,6 +276,8 @@ class WeRoBot(BaseRoBot):
             ):
                 return abort(403)
 
+#            import pdb
+#            pdb.set_trace()
             body = request.body.read()
 # 分析原始xml，返回名类型message实例            
             message = parse_user_msg(body)

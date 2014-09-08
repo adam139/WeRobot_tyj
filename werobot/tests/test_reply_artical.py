@@ -62,6 +62,9 @@ def test_replay_artical():
 
     tester = werobot.testing.WeTest(robot)
 
-    assert tester.send_xml(_make_xml("啊")) == "哦"
+   
+    replyobj = tester.send_xml(_make_xml("啊"))
+    create_reply(replyobj)
+     
 
 

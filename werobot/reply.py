@@ -103,8 +103,7 @@ class ArticlesReply(WeChatReply):
             ))
         self._args["items"] = ''.join(items)
         self._args["count"] = len(items)
-        import pdb
-        pdb.set_trace()
+
         if "content" not in self._args:
             self._args["content"] = ''
         return ArticlesReply.TEMPLATE.format(**self._args)
@@ -146,6 +145,8 @@ class TransferCustomerServiceReply(WeChatReply):
 
 
 def create_reply(reply, message=None):
+#    import pdb
+#    pdb.set_trace()
     if isinstance(reply, WeChatReply):
         return reply.render()
     elif is_string(reply):
