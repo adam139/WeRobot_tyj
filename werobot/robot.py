@@ -206,8 +206,7 @@ class BaseRoBot(object):
             session = session_storage[id]
 
         handlers = self.get_handlers(message.type)
-        import pdb
-        pdb.set_trace()
+
         try:
             for handler, args_count in handlers:
                 args = [message, session][:args_count]
@@ -326,11 +325,13 @@ if __name__ =="__main__":
 
     @robot.text
     def echo(message):
-        ArticlesReply(message=message,star=True,\
-                      MsgType="news",ArticleCount=1,Title=u"Plone技术论坛",\
-                      Decsription="最大的中文Plone技术社区",Url="http://plone.315ok.org/"
-                      )
-        return ArticlesReply
+#        import pdb
+#        pdb.set_trace()
+        a1 = ArticlesReply(message=message,star=True,MsgType="news",ArticleCount=1)
+        item = Article(title=u"Plone技术论坛",img="",description="最大的中文Plone技术社区",url="http://plone.315ok.org/")
+        a1.add_article(item)
+
+        return a1 
 
     @robot.voice
     def echotext(message):
