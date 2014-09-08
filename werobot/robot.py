@@ -206,6 +206,8 @@ class BaseRoBot(object):
             session = session_storage[id]
 
         handlers = self.get_handlers(message.type)
+        import pdb
+        pdb.set_trace()
         try:
             for handler, args_count in handlers:
                 args = [message, session][:args_count]

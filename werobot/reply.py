@@ -16,6 +16,7 @@ class Article(object):
 class WeChatReply(object):
 
     def __init__(self, message=None, star=False, **kwargs):
+
         if "source" not in kwargs and isinstance(message, WeChatMessage):
             kwargs["source"] = message.target
 
@@ -102,6 +103,8 @@ class ArticlesReply(WeChatReply):
             ))
         self._args["items"] = ''.join(items)
         self._args["count"] = len(items)
+        import pdb
+        pdb.set_trace()
         if "content" not in self._args:
             self._args["content"] = ''
         return ArticlesReply.TEMPLATE.format(**self._args)

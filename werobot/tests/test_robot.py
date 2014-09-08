@@ -8,7 +8,7 @@ from nose.tools import raises
 from werobot import WeRoBot
 from werobot.utils import generate_token, to_text
 
-
+from werobot.reply import create_reply,ArticlesReply,WeChatReply
 def test_signature_checker():
     token = generate_token()
 
@@ -102,6 +102,7 @@ def test_filter():
     import werobot.testing
     robot = WeRoBot()
 
+
     @robot.filter("喵")
     def _():
         return "喵"
@@ -133,6 +134,8 @@ def test_filter():
     tester = werobot.testing.WeTest(robot)
 
     assert tester.send_xml(_make_xml("啊")) == "汪"
+    import pdb
+    pdb.set_trace()    
     assert tester.send_xml(_make_xml("啊呵呵")) == "哼"
     assert tester.send_xml(_make_xml("喵")) == "喵"
 
@@ -144,9 +147,17 @@ def test_filter():
 
     assert len(robot._handlers["text"]) == 3
 
+#    @robot.text
+#    def _():
+#        return "哦"
+    
     @robot.text
-    def _():
-        return "哦"
+    def echo(message):
+        ArticlesReply(message=message,star=True,\
+                      MsgType="news",ArticleCount=1,Title=u"Plone技术论坛",\
+                      Decsription="最大的中文Plone技术社区",Url="http://plone.315ok.org/"
+                      )
+        return ArticlesReply    
 
     tester = werobot.testing.WeTest(robot)
 
